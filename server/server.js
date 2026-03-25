@@ -36,6 +36,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/rides', rideRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Sawari API is running' });
+});
+
 // Maps for reconnect safety and direct socket targeting if needed
 const userSockets = new Map();   // userId -> socketId
 const driverSockets = new Map(); // driverId -> socketId
